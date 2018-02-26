@@ -14,9 +14,22 @@ To add new posts, simply add a file in the `_posts` directory that follows the c
 Jekyll also offers powerful support for code snippets:
 
 {% highlight cpp %}
-int main(void)
+class Job
 {
-}
+public:
+    Job() = default;
+    Job(void(*jobFunction)(Job&), Job* parent = nullptr);
+
+    void run();
+    bool finished() const;
+
+private:
+    void(*_jobFunction)(Job&);
+    Job* _parent;
+    std::atomic_size_t _unfinishedJobs;
+
+    void finish();
+};
 {% endhighlight %}
 
 Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].

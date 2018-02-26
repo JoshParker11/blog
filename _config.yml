@@ -7,7 +7,7 @@ title       : Minimal Theme
 description : Your awesome site
 author      : Desired Persona
 email       : your-email@domain.com
-baseurl     : "" # the subpath of your site, e.g. /blog
+baseurl     : "/blog" # the subpath of your site, e.g. /blog
 url         : ""
 date_format : "%-d %b %Y"
 port        : 4000
